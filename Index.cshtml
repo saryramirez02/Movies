@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Movies.web.Models.sales>
+
+@{
+    ViewData["Title"] = "sales";
+}
+
+<h1>Sales</h1>
+
+<p>
+     <a class="text-primary" asp-action="Create">Create a sale</a>
+</p>
+<table class="table text-light">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name_client)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.movie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name_client)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.movie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.ActionLink("Buy", "buy", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
