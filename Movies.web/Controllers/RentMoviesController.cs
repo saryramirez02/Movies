@@ -4,47 +4,42 @@ using Movies.web.Models;
 
 namespace Movies.web.Controllers
 {
-    public class MoviesController : Controller
+    public class RentMoviesController : Controller
     {
-        // GET: MoviesController
-        public ActionResult Index() {
+        // GET: RentMoviesController
+        public ActionResult Index()
+        {
+            IEnumerable<Movie> RentMovie = new List<Movie>() {
 
-
-            IEnumerable<Movie> Movies = new List<Movie>()
-            {
-
-              new Movie
-              {
-                  Id=1,
+                new Movie
+                {
+                     Id=1,
                   Name="Avengers Infinity War",
                   Director="Anthony Russo",
-                  Front_page = "Images/Avenger.jpg",
+                 Front_page = "Images/Avenger.jpg",
                   Genre ="Action",
                   Duration="2h 29m",
                   Relase_date= Convert.ToDateTime("04/12/2018"),
                   Rating="PG-13",
                   Rent_price=70,
                   Sale_price=150
-              },
+                },
 
-
-                 new Movie
+                new Movie
+                {
+                 Id=2,
+                 Name="Sherk",
+                 Director="Andrew Adamson, Vicky Jenson.",
+                 Front_page="Images/Sherk.jpg",
+                 Genre="Comedy",
+                 Duration="1h 30m",
+                 Relase_date= Convert.ToDateTime("04/12/2001"),
+                 Rating="PG-MPAA",
+                 Rent_price=40,
+                 Sale_price=120
+                },
+                   new Movie
               {
-
-                  Id=2,
-                  Name="Sherk",
-                  Director="Andrew Adamson, Vicky Jenson.", 
-                  Front_page="Images/Sherk.jpg", 
-                  Genre="Comedy",
-                  Duration="1h 30m",
-                  Relase_date= Convert.ToDateTime("12/04/2001"), 
-                  Rating="PG-MPAA",
-                  Rent_price=40,
-                  Sale_price=120
-                  
-              },
-                 new Movie
-              { 
 
                   Id=3,
                   Name="Harry Potter",
@@ -108,26 +103,24 @@ namespace Movies.web.Controllers
 
 
 
+            };
 
-          };
-
-
-            return View(Movies);
+            return View(RentMovie);
         }
 
-        // GET: MoviesController/Details/5
+        // GET: RentMoviesController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: MoviesController/Create
+        // GET: RentMoviesController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: MoviesController/Create
+        // POST: RentMoviesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -142,13 +135,13 @@ namespace Movies.web.Controllers
             }
         }
 
-        // GET: MoviesController/Edit/5
+        // GET: RentMoviesController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: MoviesController/Edit/5
+        // POST: RentMoviesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -163,13 +156,13 @@ namespace Movies.web.Controllers
             }
         }
 
-        // GET: MoviesController/Delete/5
+        // GET: RentMoviesController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: MoviesController/Delete/5
+        // POST: RentMoviesController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

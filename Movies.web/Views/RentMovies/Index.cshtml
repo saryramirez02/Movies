@@ -4,11 +4,8 @@
     ViewData["Title"] = "List of movies";
 }
 
-<h1 class="text-light">Movies</h1>
+<h1 class="text-light">Movies for rent</h1>
 
-<p>
-    <a asp-action="Create">Insert a new Movie</a>
-</p>
 <table class="table text-light">
     <thead>
         <tr>
@@ -83,9 +80,13 @@
                 @Html.DisplayFor(modelItem => item.Rent_price)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+               @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                <p>
+                     <a asp-action="" text>Rent this movie!</a> @*Donde dice create deberia de redirigir a la pagina de facturacion*@
+                </p>
+
             </td>
         </tr>
 }
